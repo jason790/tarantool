@@ -16,6 +16,7 @@ travis_test_linux: travis_deps_linux
 travis_coverage: travis_deps_linux
 	cmake . -DCMAKE_BUILD_TYPE=RelWithDebInfo -DENABLE_GCOV=ON
 	make -j8
+	rm -rf test/replication/prune.test.py # Broken console handshake
 	# Enable --long tests for coverage
 	cd test && /usr/bin/python test-run.py --long
 
