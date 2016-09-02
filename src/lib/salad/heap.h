@@ -229,7 +229,7 @@ HEAP(sift_down)(heap_t *heap, struct heap_node *node);
 /**
  * Check that heap inveriants is holded.
  */
-static int
+static inline int /* inline for suppress warning */
 HEAP(check)(heap_t *heap);
 
 
@@ -426,7 +426,7 @@ HEAP(iterator_next)(struct heap_iterator *it)
 /**
  * Check that heap inveriants is holded.
  */
-static int
+static inline int
 HEAP(check)(heap_t *heap)
 {
 	heap_off_t left, right, min_child;
